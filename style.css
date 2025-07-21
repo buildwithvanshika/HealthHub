@@ -1,0 +1,163 @@
+body {
+    background-color: #6ac0af;
+}
+
+.mainbox {
+    background-color: #f1f6f5;
+    margin: 5rem 5rem 5rem 5rem;
+    height: 100rem;
+    border-radius: 1.2rem;
+}
+.navbar {
+    /* position: sticky; */
+    top: 0;
+    padding-top: 0.5rem;
+    margin-left: 2rem;
+    z-index: 10;
+}
+
+#line1 {
+    font-size: 2rem;
+    color: #015444;
+    margin-bottom: 0;
+}
+
+#p1 {
+    color: #016f59;
+    font-weight: lighter;
+    margin-top: 2px;
+}
+
+#line2 {
+      color: #015444;
+      font-size: 3rem;
+      font-weight: 100;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 0;
+}
+
+#p2 {
+     color: #016f59;
+     font-size: 1.6rem;
+     font-weight: lighter;
+     margin-top: 1.2rem;
+     text-align: center;
+      
+}
+
+button {
+    font-size: 1.2rem;
+    background-color: #12ad8e;
+    color: white;
+    font-weight: lighter;
+    padding: 0.8rem;
+    border-color:#12ad8e;
+    border-radius: 1.5rem;
+    align-items: center;
+    text-align: center;
+    /* margin-left: 2rem; */
+}
+
+.box {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 45%;
+    /* min-width: 280px; */
+}
+
+.icon-title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#img1 {
+    font-size: 4rem;
+    color: #01803c;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#line3 {
+    margin: 0;
+    color: #01803c;
+    font-size: 1.6rem;
+}
+
+#p3 {
+    margin: 0.2rem 0 0 0;
+    color: #01803c;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.heading2 {
+    margin: 0;
+    color: #01803c;
+    font-size: 1.6rem;
+}
+.sub2 {
+    margin: 0.2rem 0 0 0;
+    color: #01803c;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+.icon-title2 {
+     display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+/* Make it Responsive */
+
+@media screen and (max-width: 768px) {
+  .mainbox {
+    margin: 2rem;
+    height: auto;
+  }
+
+  .hero {
+    margin: 2rem 0;
+  }
+
+  button {
+    margin-left: 0;
+    width: 90%;
+  }
+
+  .box {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .icon-title,
+  .icon-title2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #img1 {
+    margin-bottom: 1rem;
+  }
+}
+.hero {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem;
+}

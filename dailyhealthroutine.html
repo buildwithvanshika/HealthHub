@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Health Routine</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <h2>🌞 Daily Health Routine</h2>
+
+  <input type="text" id="taskInput" placeholder="Type your health task...">
+  <button id="addTaskBtn">Add Task</button>
+
+  <ul id="taskList"></ul>
+  <hr style="margin: 2rem 0; border: none; border-top: 2px solid #2c7a7b;">
+
+<h2>🍎 Healthy Eating Tips</h2>
+<div class="tips-container">
+  <ul class="tips-list">
+    <li>🥦 Eat a variety of colorful fruits and vegetables every day.</li>
+    <li>💧 Stay hydrated—aim for 7-8 glasses of water daily.</li>
+    <li>🥗 Include whole grains, legumes, and nuts in your meals.</li>
+    <li>🍽️ Don’t skip breakfast—fuel your body for the day!</li>
+    <li>🚫 Limit processed foods and sugary drinks.</li>
+    <li>🍵 Drink herbal teas instead of sodas or energy drinks.</li>
+    <li>🕒 Eat smaller portions more frequently to avoid overeating.</li>
+  </ul>
+</div>
+
+<hr style="margin: 2rem 0; border: none; border-top: 2px solid #2c7a7b;">
+
+<h2>📋 Mood Tracker</h2>
+<p>Click an emoji to reflect your current mood:</p>
+
+<div class="emoji-box">
+  <span class="emoji" onclick="showMood('happy')">😄</span>
+  <span class="emoji" onclick="showMood('neutral')">😐</span>
+  <span class="emoji" onclick="showMood('sad')">😞</span>
+</div>
+
+<div id="moodResult" class="mood-output">
+  <!-- Output will appear here -->
+</div>
+
+<hr style="margin: 2rem 0; border: none; border-top: 2px solid #2c7a7b;">
+
+<h2>⏱️ Pomodoro Focus Timer</h2>
+<p>Work with focus for 25 minutes, then take a 5-minute break!</p>
+
+<div class="pomodoro-container">
+  <div id="timerDisplay">25:00</div>
+  <div class="timer-buttons">
+    <button onclick="startTimer()">▶️ Start</button>
+    <button onclick="pauseTimer()">⏸️ Pause</button>
+    <button onclick="resetTimer()">🔄 Reset</button>
+  </div>
+</div>
+
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    const taskList = document.getElementById("taskList");
+
+    addTaskBtn.addEventListener("click", () => {
+      const taskText = taskInput.value.trim();
+      if (taskText !== "") {
+        const li = document.createElement("li");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+
+        checkbox.addEventListener("change", () => {
+          li.classList.toggle("completed");
+        });
+
+        li.appendChild(checkbox);
+        li.appendChild(document.createTextNode(taskText));
+        taskList.appendChild(li);
+        taskInput.value = "";
+      }
+    });
+
+    function showMood(mood) {
+  let quote = "";
+  let breathing = "";
+  let song = "";
+
+  if (mood === "happy") {
+    quote = "“Keep shining, the world needs your light!” ✨";
+    breathing = "Try 4-7-8 breathing: Inhale 4s → Hold 7s → Exhale 8s 🌬️";
+    song = '<a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target="_blank">🎵 Listen: Perfect - Ed Sheeran</a>';
+  } else if (mood === "neutral") {
+    quote = "“Every day may not be good, but there is good in every day.” 🌤️";
+    breathing = "Try box breathing: Inhale 4s → Hold 4s → Exhale 4s → Hold 4s 🧘‍♀️";
+    song = '<a href="https://www.youtube.com/watch?v=RgKAFK5djSk" target="_blank">🎵 Listen: See You Again - Wiz Khalifa</a>';
+  } else if (mood === "sad") {
+    quote = "“This too shall pass. Better days are coming.” 💛";
+    breathing = "Try slow breathing: Inhale 5s → Hold 5s → Exhale 5s 🌫️";
+    song = '<a href="https://www.youtube.com/watch?v=JGwWNGJdvx8" target="_blank">🎵 Listen: Shape of You - Ed Sheeran</a>';
+  }
+
+  document.getElementById("moodResult").innerHTML = `
+    <strong>🧠 Motivational Quote:</strong> <br>${quote}<br><br>
+    <strong>🌬️ Breathing Exercise:</strong> <br>${breathing}<br><br>
+    ${song}
+  `;
+}
+let timer;
+let totalSeconds = 25 * 60;
+let isRunning = false;
+
+function updateDisplay() {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  document.getElementById("timerDisplay").textContent =
+    `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function startTimer() {
+  if (!isRunning) {
+    isRunning = true;
+    timer = setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        updateDisplay();
+      } else {
+        clearInterval(timer);
+        isRunning = false;
+        alert("🎉 Pomodoro session complete! Time for a break.");
+      }
+    }, 1000);
+  }
+}
+
+function pauseTimer() {
+  clearInterval(timer);
+  isRunning = false;
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  totalSeconds = 25 * 60;
+  isRunning = false;
+  updateDisplay();
+}
+
+updateDisplay();
+
+  </script>
+
+</body>
+</html>
