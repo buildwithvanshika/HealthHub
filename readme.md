@@ -2,7 +2,7 @@
 
 > ✨ A beautiful, personal wellness dashboard designed to help you stay healthy, mindful & productive – every single day.
 
-🌐 **Live Demo** → [buildwithvanshika.github.io/healthhub](https://buildwithvanshika.github.io/healthhub)
+🌐 **Live Demo** →  https://buildwithvanshika.github.io/HealthHub/
 
 ---
 
@@ -37,13 +37,6 @@ Whether it’s tracking habits, calming your mind, or taking the perfect break, 
 | `HTML5` | Structure & content |
 | `CSS3`  | Styling & layout |
 | `JavaScript` | Interactivity & dynamic features |
-
----
-
-## 🖼️ Screenshot
-
-> Add your own preview below 👇  
-![HealthHub Preview](https://via.placeholder.com/800x450.png?text=HealthHub+Website+Screenshot)
 
 ---
 
